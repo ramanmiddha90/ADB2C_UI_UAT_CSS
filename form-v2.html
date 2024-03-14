@@ -3,7 +3,7 @@
 <html lang="en"><head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="./form_files/style2.css" type="text/css" data-preload="true"> -->
+     <link rel="stylesheet" href="https://prod.cms.static.my-sandoz.com/b2c_uat/b2c_uat_webapp/styles/main_v2.css" data-preload="true">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script>
         var titleItems = ["Title", "Mr.", "Mrs.", "Doc"];
@@ -93,37 +93,7 @@
 
 
         var applyCSS = function () {
-            var version = GetParameterValues('Version');
-
-
-            // alert(styleURL)  ;
-            let head = document.getElementsByTagName('HEAD')[0];
-
-            // Create new link Element
-            let link = document.createElement('link');
-
-            // set the attributes for link element
-            link.rel = 'stylesheet';
-
-            link.type = 'text/css';
-
-            if (version == 2) {
-                // Get HTML head element
-                link.href = "https://ramanmiddha90.github.io/ADSolarAsests/styles/main_v2.css";
-                $("#logo").attr("src", "https://ramanmiddha90.github.io/ADSolarAsests/objects/sandoz-logo_6.svg");
-            }
-            else if (version == 3) {
-                link.href = "https://ramanmiddha90.github.io/ADSolarAsests/styles/main_v2.css";
-                $("#logo").attr("src", "https://ramanmiddha90.github.io/ADSolarAsests/objects/sandoz_logo_sl.svg");
-
-            }
-            else {
-                link.href = "https://ramanmiddha90.github.io/ADSolarAsests/styles/main.css";
-                $("#logo").attr("src", "https://ramanmiddha90.github.io/ADSolarAsests/objects/sandoz-logo_6-1.svg");
-            }
-            // Append link element to HTML head
-            head.appendChild(link);
-
+           
 
 
 

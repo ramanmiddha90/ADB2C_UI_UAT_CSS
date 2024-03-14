@@ -27,6 +27,9 @@ margin-top: 75px;
 .invitedRegistration .intro p{
 display:none;
 }
+.profileEditinvalidUser .intro p{
+	display:none;
+}
 h1 {
     font-size: 20px;
     font-weight: bold;
