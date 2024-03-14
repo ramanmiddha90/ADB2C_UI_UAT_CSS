@@ -1,0 +1,250 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+body {
+background-color: rgb(246,246,246);
+font-family: "VoltaModernDisplay-65Medium",sans-serif;
+text-align: left;
+}
+
+h1 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.wrapper {
+width:100%;
+background-color: white;
+}
+
+.intro {
+    margin: 8px 0px;
+}
+
+#logo {
+    width: 70%;
+    margin: 0px auto;
+    padding-top: 20px;
+}
+
+#pattern {
+    background-image: url(./blue_carbon_open_pattern_tile_120.png);
+    background-repeat: repeat-x;
+    width: 100%;
+    height: 43px;
+}
+
+#form {
+    padding: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+.wrapper {
+width:468px;
+margin: 20px auto;
+border-radius: 2px;
+box-shadow: 0px 0px 0px 1px rgba(116,116,116, 0.3);
+opacity: 1;
+}
+
+#logo {
+    display: block;
+    width: 250px;
+    margin: 20px auto;
+}
+}
+#api{ display:block !important; }
+#logo{ display:block !important; }
+button {
+    align-items: center;
+    appearance: button;
+    background-color: rgb(2,55,97);
+    border-bottom-color: rgb(255,255,255);
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-bottom-style: none;
+    border-bottom-width: 0px;
+    border-image-outset: 0;
+    border-image-repeat: stretch;
+    border-image-slice: 100%;
+    border-image-source: none;
+    border-image-width: 1;
+    border-left-color: rgb(255,255,255);
+    border-left-style: none;
+    border-left-width: 0px;
+    border-right-color: rgb(255,255,255);
+    border-right-style: none;
+    border-right-width: 0px;
+    border-top-color: rgb(255,255,255);
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-top-style: none;
+    border-top-width: 0px;
+    box-shadow: rgba(255,255,255,0.15) 0px 1px 0px 0px inset,rgba(0,0,0,0.075) 0px 1px 1px 0px;
+    box-sizing: border-box;
+    color: rgb(255,255,255);
+    cursor: pointer;
+    display: flex;
+    font-family: "Volta: Modern: Display",arial;
+    font-size: 16px;
+    font-stretch: 100%;
+    font-style: normal;
+    font-weight: 600;
+    height: 40px;
+    justify-content: center;
+    letter-spacing: normal;
+    line-height: 24px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 10px;
+    margin-top: 0px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 8px;
+    text-align: center;
+    text-decoration-color: rgb(255,255,255);
+    text-decoration-line: none;
+    text-decoration-style: solid;
+    text-decoration-thickness: auto;
+    text-indent: 0px;
+    text-rendering: auto;
+    text-shadow: none;
+    text-transform: none;
+    transition-delay: 0s,0s,0s,0s;
+    transition-duration: 0.15s,0.15s,0.15s,0.15s;
+    transition-property: color,background-color,border-color,box-shadow;
+    transition-timing-function: ease-in-out,ease-in-out,ease-in-out,ease-in-out;
+    user-select: none;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+#continue, #cancel, #email_ver_but_edit {
+    float: left; 
+}
+
+#verifying_blurb{
+    color: #FFF;
+}
+
+.error {
+    color:red;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.Password {
+    clear: both;
+}
+
+#signInName_label, #password_label, #email_label, #newPassword_label, #reenterPassword_label {
+    display: none;
+}
+#api{ display:block !important; }
+.verifying-modal {
+    clear: both;
+}
+
+.verificationInfoText, .verificationSuccessText, .verificationErrorText {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 0px;
+    margin-right: 0px;
+    display: block;
+}
+
+div.buttons {
+    min-height: 36px;
+    margin-bottom: 16px;
+}
+
+div#api > div.buttons:first-child {
+    display: none;
+}
+
+input {
+    appearance: auto;
+    background-color: rgb(255,255,255);
+    border-bottom-color: rgb(99,99,99);
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-bottom-style: inset;
+    border-bottom-width: 1px;
+    border-image-outset: 0;
+    border-image-repeat: stretch;
+    border-image-slice: 100%;
+    border-image-source: none;
+    border-image-width: 1;
+    border-left-color: rgb(99,99,99);
+    border-left-style: inset;
+    border-left-width: 1px;
+    border-right-color: rgb(99,99,99);
+    border-right-style: inset;
+    border-right-width: 1px;
+    border-top-color: rgb(99,99,99);
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-top-style: inset;
+    border-top-width: 1px;
+    box-sizing: border-box;
+    color: rgb(34,31,31);
+    cursor: text;
+    display: flex;
+    flex-direction: column;
+    font-family: "Volta: Modern: Display",arial;
+    font-feature-settings: normal;
+    font-kerning: auto;
+    font-optical-sizing: auto;
+    font-size: 16px;
+    font-stretch: 100%;
+    font-style: normal;
+    font-weight: 400;
+    height: 54px;
+    letter-spacing: normal;
+    line-height: 24px;
+    margin-bottom: 16px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    padding-bottom: 14px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 14px;
+    text-align: start;
+    text-indent: 0px;
+    text-rendering: auto;
+    text-shadow: none;
+    text-size-adjust: 100%;
+    text-transform: none;
+    width: 100%;
+    word-spacing: 0px;
+    writing-mode: horizontal-tb;
+    -webkit-rtl-ordering: logical;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);   
+}
+
+li {
+    list-style-type: none;
+}
+
+label {
+box-sizing: border-box;
+color: rgb(33,37,41);
+cursor: default;
+display: block;
+font-family: "Volta: Modern: Display",arial;
+font-size: 16px;
+font-weight: 400;
+height: 24px;
+line-height: 24px;
+text-align: start;
+text-size-adjust: 100%;
+-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.helpLink {
+display:none;
+}
