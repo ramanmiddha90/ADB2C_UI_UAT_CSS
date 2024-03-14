@@ -116,21 +116,9 @@ var applyCSS = function () {
             link.rel = 'stylesheet';
 
             link.type = 'text/css';
-
-            if(version==2){
-                // Get HTML head element
-                link.href = "https://ramanmiddha90.github.io/ADSolarAsests/styles/main_v2.css";
-                $("#logo").attr("src","https://ramanmiddha90.github.io/ADSolarAsests/objects/sandoz-logo_6.svg");
-            }
-            else if(version==3){
-                link.href = "https://ramanmiddha90.github.io/ADSolarAsests/styles/main_v2.css";
-                $("#logo").attr("src","https://ramanmiddha90.github.io/ADSolarAsests/objects/sandoz_logo_sl.svg");
-           
-            }
-            else{
-                link.href =  "https://ramanmiddha90.github.io/ADSolarAsests/styles/main.css";
-                $("#logo").attr("src","https://ramanmiddha90.github.io/ADSolarAsests/objects/sandoz-logo_6-1.svg");
-            }
+    link.href = "https://ramanmiddha90.github.io/ADB2C_UI_UAT/styles/main_v2.css";
+    $("#logo").attr("src", " https://ramanmiddha90.github.io/ADB2C_UI_UAT/objects/sandoz-logo_6.svg");
+   
                 // Append link element to HTML head
             head.appendChild(link);
 
