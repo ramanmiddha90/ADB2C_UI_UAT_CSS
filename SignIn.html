@@ -38,7 +38,10 @@
                     if (window.pageReady) {
 
                         applyB2CAddOns();
-                        clearInterval(intervalHandle);
+                        var continuteButtong = document.getElementById('continue');
+                        if (continuteButtong) {
+                            clearInterval(intervalHandle);
+                        }
                     }
                 }, 50);
         }());
