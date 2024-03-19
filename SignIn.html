@@ -22,10 +22,7 @@
                 if (targetNode.style.display != 'none') {
                     if ($("#customCancel").length <= 0) {
                       // doSomething
-                            $("#continue").after("<button id='customCancel'>Cancel</button>");
-                            $("#Cancel").click(function () {
-                                $("#cancel").click();
-                            });
+                          
                     }
                 }
             });
@@ -40,6 +37,10 @@
                         applyB2CAddOns();
                         var continuteButton = document.getElementById('continue');
                         if (continuteButton && $("#continue").is(':visible')) {
+                            $("#continue").after("<button id='customCancel'>Cancel</button>");
+                            $("#Cancel").click(function () {
+                                $("#cancel").click();
+                            });
                             clearInterval(intervalHandle);
                         }
                     }
