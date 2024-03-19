@@ -17,6 +17,7 @@
            
             var targetNode = document.getElementById('continue');
             var customCancel = document.querySelector("#customCancel");
+            debugger;
             var observer = new MutationObserver(function () {
                 if (targetNode.style.display != 'none') {
                     if ($("#customCancel").length <= 0) {
