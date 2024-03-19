@@ -18,7 +18,21 @@
             var intervalHandle = setInterval(
                 function () {
                     if (window.pageReady) {
+                        function GetParameterValues(param) {
+                            var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+                            for (var i = 0; i < url.length; i++) {
+                                var urlparam = url[i].split('=');
+                                if (urlparam[0].toUpperCase() == param.toUpperCase()) {
+                                    return urlparam[1];
+                                }
 
+                            }
+                            var versionValueInReferrer = GetVersionInreferrer(param);
+
+                            if (versionValueInReferrer != null)
+                                return versionValueInReferrer;
+                            return null;
+                        };
                         var continuteButton = document.getElementById('continue');
                         if (continuteButton && $("#continue").is(':visible')) {
                             if( $("#customCancel") &&  $("#customCancel").is(':visible'))
@@ -27,7 +41,11 @@
                             }
                             $("#continue").after("<button id='customCancel'>Cancel</button>");
                             $("#customCancel").click(function () {
-                                window.location.replace("http://google.com");
+                                var redirectURL = GetParameterValues('redirect_URL');
+                                if (redirectURL == null || redirectURL == undefined)
+                                    window.location.replace("http://google.com");
+                                else
+                                    window.location.replace(redirectURL);
                             });
                             clearInterval(intervalHandle);
                         }
