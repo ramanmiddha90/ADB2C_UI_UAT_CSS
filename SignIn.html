@@ -38,8 +38,8 @@
                     if (window.pageReady) {
 
                         applyB2CAddOns();
-                        var continuteButtong = document.getElementById('continue');
-                        if (continuteButtong) {
+                        var continuteButton = document.getElementById('continue');
+                        if (continuteButton && $("#continue").is(':visible')) {
                             clearInterval(intervalHandle);
                         }
                     }
