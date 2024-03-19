@@ -13,33 +13,21 @@
     
 
     <script>
-        var applyB2CAddOns = function () {
-           
-            var targetNode = document.getElementById('continue');
-            var customCancel = document.querySelector("#customCancel");
-            debugger;
-            var observer = new MutationObserver(function () {
-                if (targetNode.style.display != 'none') {
-                    if ($("#customCancel").length <= 0) {
-                      // doSomething
-                          
-                    }
-                }
-            });
-            observer.observe(targetNode, { attributes: true, childList: true });
-        };
-
+       
         (function onPageReady() {
             var intervalHandle = setInterval(
                 function () {
                     if (window.pageReady) {
 
-                        applyB2CAddOns();
                         var continuteButton = document.getElementById('continue');
                         if (continuteButton && $("#continue").is(':visible')) {
+                            if( $("#customCancel") &&  $("#customCancel").is(':visible'))
+                            {
+                                $("#customCancel").remove();
+                            }
                             $("#continue").after("<button id='customCancel'>Cancel</button>");
-                            $("#Cancel").click(function () {
-                                $("#cancel").click();
+                            $("#customCancel").click(function () {
+                              window.location.href="www.google.com";
                             });
                             clearInterval(intervalHandle);
                         }
