@@ -42,13 +42,13 @@
                                 var errorCode = errors.ErrorMapping[0].ErrorCode;
                                 var redirectURL = GetParameterValues('redirect_URL');
                                 if (redirectURL == null || redirectURL == undefined) { 
-                                    var url = "http://google.com?" + errorCode;
+                                    var url = "http://google.com#ErrorCode=" + errorCode;
                                     window.location.replace(url);
 
                                 }
                                   
                                 else {
-                                  
+                                    var url = redirectURL+"#ErrorCode=" + errorCode;
                                     window.location.replace(redirectURL);
                                 }
                                    
