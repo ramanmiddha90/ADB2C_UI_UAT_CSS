@@ -41,6 +41,7 @@
                                 var errors = $.parseJSON($("#ErrorMappings").val());
                                 var errorCode = errors.ErrorMapping[0].ErrorCode;
                                 var redirectURL = GetParameterValues('redirect_URL');
+                                var redirectURI = GetParameterValues('redirect_uri'); 
                                 if (redirectURL == null || redirectURL == undefined) { 
                                     var url = "http://google.com#ErrorCode=" + errorCode;
                                     window.location.replace(url);
@@ -48,7 +49,7 @@
                                 }
                                   
                                 else {
-                                    var url = redirectURL+"#error`=" + errorCode;
+                                    var url = redirectURI + "#error=" + errorCode + ":" + redirectURL;
                                     window.location.replace(redirectURL);
                                 }
                                    
