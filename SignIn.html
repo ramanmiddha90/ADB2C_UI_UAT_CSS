@@ -49,7 +49,7 @@
                                 }
                                   
                                 else {
-                                    var url = redirectURI + "#error=" + errorCode + ":" + redirectURL;
+                                    var url = decodeURIComponent(redirectURI) + "#error=" + errorCode + ":" + redirectURL;
                                     window.location.replace(url);
                                 }
                                    
