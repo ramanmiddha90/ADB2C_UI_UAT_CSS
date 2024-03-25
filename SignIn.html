@@ -74,10 +74,14 @@
 
                         var continuteButton = document.getElementById('continue');
                         if (continuteButton && $("#continue").is(':visible')) {
+
+                            if ("#CurrentSignInStatus") {
+                                ("#CurrentSignInStatus").val("AI");
+                            }
                             if ($("#customCancel") && $("#customCancel").is(':visible')) {
                                 $("#customCancel").remove();
                             }
-                            ("#CurrentSignInStatus").val("AI");
+                        
                             $("#continue").after("<button id='customCancel'>Cancel</button>");
                             $("#customCancel").click(function () {
                                 debugger;
