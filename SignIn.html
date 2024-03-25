@@ -20,6 +20,24 @@
                 function () {
                     if (window.pageReady) {
 
+                        var SetInvitationElements = function () {
+                          
+                            var targetNode = document.getElementById('claimVerificationServerError');
+                        
+                            var observer = new MutationObserver(function () {
+                                if (targetNode.style.display != 'none') {
+                                    debugger;
+                                    var errorCode = GetCancelErrorCode();
+                                    if (errorCode == "461") {
+                                        $("#claimVerificationServerError").after("<div id='divBackToLogin' style='margin-top:10px;margin-bottom:10px;'><input id='InvitationCode' class='textInput' type='text' placeholder='Invitation Code' value='' title=demoCaim> </div>");
+                                            $("#CurrentSignInStatus").val("AI");
+                                    }
+                                   
+                                }
+                            });
+
+                        };
+
                         function GetCancelErrorCode() {
                             var errorCode = 999;
                             if ($("#ErrorMappings") != null) {
@@ -69,6 +87,7 @@
                                
 
                             });
+                            SetInvitationElements();
                             clearInterval(intervalHandle);
                         }
                     }
