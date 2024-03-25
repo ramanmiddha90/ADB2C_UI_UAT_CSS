@@ -77,6 +77,7 @@
                             if ($("#customCancel") && $("#customCancel").is(':visible')) {
                                 $("#customCancel").remove();
                             }
+                            ("#CurrentSignInStatus").val("AI");
                             $("#continue").after("<button id='customCancel'>Cancel</button>");
                             $("#customCancel").click(function () {
                                 debugger;
