@@ -1,23 +1,41 @@
 <!DOCTYPE html>
 <!-- saved from url=(0036)https://dimkoig1.github.io/form.html -->
-<html lang="en"><head>
+<html lang="en">
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="https://ramanmiddha90.github.io/ADB2C_UI_UAT/styles/main_v2.css" data-preload="true">
+    <link rel="stylesheet" href="https://ramanmiddha90.github.io/ADB2C_UI_UAT/styles/main_v2.css" data-preload="true">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <style type="text/css">
         #cancel {
             display: none;
         }
     </style>
-    
+
 
     <script>
-       
+
         (function onPageReady() {
             var intervalHandle = setInterval(
                 function () {
                     if (window.pageReady) {
+
+                        function GetCancelErrorCode() {
+                            var errorCode = 999;
+                            if ($("#ErrorMappings") != null) {
+                               
+                                var errorList = $.parseJSON($("#ErrorMappings").val());
+                                var currentErrorMessage = $("claimVerificationServerError");
+                                if (currentErrorMessage) {
+                                    for (var error in errorList.ErrorMapping) {
+                                        if (error.ErrorMessage == currentErrorMessage) {
+                                            return error.ErrorCode;
+                                        }
+                                    }
+                                }
+                            }
+                            return errorCode;
+                        };
                         function GetParameterValues(param) {
                             var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
                             for (var i = 0; i < url.length; i++) {
@@ -29,30 +47,22 @@
                             }
                             return null;
                         };
+
                         var continuteButton = document.getElementById('continue');
                         if (continuteButton && $("#continue").is(':visible')) {
-                            if( $("#customCancel") &&  $("#customCancel").is(':visible'))
-                            {
+                            if ($("#customCancel") && $("#customCancel").is(':visible')) {
                                 $("#customCancel").remove();
                             }
                             $("#continue").after("<button id='customCancel'>Cancel</button>");
                             $("#customCancel").click(function () {
                                 debugger;
-                                var errors = $.parseJSON($("#ErrorMappings").val());
-                                var errorCode = errors.ErrorMapping[0].ErrorCode;
-                                var redirectURL = GetParameterValues('redirect_URL');
-                                var redirectURI = GetParameterValues('redirect_uri'); 
-                                if (redirectURL == null || redirectURL == undefined) { 
-                                    var url = "http://google.com#ErrorCode=" + errorCode;
-                                    window.location.replace(url);
+                                var errorCode = GetCancelErrorCode();
+                                var redirectURL = GetParameterValues('redirect_URL'); //Encoded value FE URL
+                                var redirectURI = GetParameterValues('redirect_uri');
+                                var url = decodeURIComponent(redirectURI) + "#error=" + errorCode + ":" + redirectURL;
+                                window.location.replace(url);
+                               
 
-                                }
-                                  
-                                else {
-                                    var url = decodeURIComponent(redirectURI) + "#error=" + errorCode + ":" + redirectURL;
-                                    window.location.replace(url);
-                                }
-                                   
                             });
                             clearInterval(intervalHandle);
                         }
@@ -63,13 +73,13 @@
 </head>
 <body>
     <div class="wrapper">
-        <img id="logo" src="https://ramanmiddha90.github.io/ADSolarAsests/objects/sandoz-logo_6.svg" alt="Sandoz Logo"  style = "display:none;">
+        <img id="logo" src="https://ramanmiddha90.github.io/ADSolarAsests/objects/sandoz-logo_6.svg" alt="Sandoz Logo" style="display:none;">
         <div id="form">
-            <div id="api" data-name="SelfAsserted" style="display: none;" >
-              </div>
+            <div id="api" data-name="SelfAsserted" style="display: none;">
+            </div>
         </div>
     </div>
 
-  </body>
+</body>
 
 </html>
