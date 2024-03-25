@@ -272,7 +272,7 @@ fieldset{
 }
 
 #signInName_label, #password_label, #email_label, #newPassword_label, #reenterPassword_label, .heading, #ErrorMappings_label, #ErrorMappings, #CurrentSignInStatus,
-#CurrentSignInStatus_label, invitationCode, invitationCode_label {
+#CurrentSignInStatus_label, #invitationCode, #invitationCode_label {
     display: none;
 }
 
