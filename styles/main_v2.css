@@ -271,7 +271,7 @@ fieldset{
     border:none;
 }
 
-#signInName_label, #password_label, #email_label, #newPassword_label, #reenterPassword_label,.heading {
+#signInName_label, #password_label, #email_label, #newPassword_label, #reenterPassword_label, .heading, #ErrorMappings_label, #ErrorMappings {
     display: none;
 }
 
