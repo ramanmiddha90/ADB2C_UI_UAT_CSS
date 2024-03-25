@@ -28,14 +28,17 @@
                             var observer = new MutationObserver(function () {
                                 if (targetNode.style.display != 'none') {
                                     debugger;
-                                 
+
                                     var errorCode = GetCancelErrorCode();
                                     $("#attributeList").after($("#claimVerificationServerError"))
                                     if (errorCode == "461") {
                                         $("#claimVerificationServerError").after("<div id='divInvitationCode' style='margin-top:10px;margin-bottom:10px;'><input id='InvitationCode' class='textInput' type='text' placeholder='Invitation Code' value='' title=demoCaim> </div>");
-                                            $("#CurrentSignInStatus").val("AI");
+                                        $("#CurrentSignInStatus").val("AI");
                                     }
-                                   
+
+                                }
+                                else {
+                                    $("#divInvitationCode").remove();
                                 }
                             });
                             observer.observe(targetNode, { attributes: true, childList: true });
