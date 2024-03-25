@@ -25,7 +25,7 @@
                             if ($("#ErrorMappings") != null) {
                                
                                 var errorList = $.parseJSON($("#ErrorMappings").val());
-                                var currentErrorMessage = $("claimVerificationServerError");
+                                var currentErrorMessage = $("#claimVerificationServerError")?.text();
                                 if (currentErrorMessage) {
                                     for (var error in errorList.ErrorMapping) {
                                         if (error.ErrorMessage == currentErrorMessage) {
@@ -58,6 +58,8 @@
                                 debugger;
                                 var errorCode = GetCancelErrorCode();
                                 var redirectURL = GetParameterValues('redirect_URL'); //Encoded value FE URL
+                                if (redirectURL == null)
+                                    redirectURL = "";
                                 var redirectURI = GetParameterValues('redirect_uri');
                                 var url = decodeURIComponent(redirectURI) + "#error=" + errorCode + ":" + redirectURL;
                                 window.location.replace(url);
