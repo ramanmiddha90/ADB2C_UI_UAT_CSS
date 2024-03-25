@@ -27,11 +27,13 @@
                                 var errorList = $.parseJSON($("#ErrorMappings").val());
                                 var currentErrorMessage = $("#claimVerificationServerError")?.text();
                                 if (currentErrorMessage) {
-                                    for (var error in errorList.ErrorMapping) {
+
+                                    errorList.ErrorMapping.forEach(function (error) {
+
                                         if (error.ErrorMessage == currentErrorMessage) {
                                             return error.ErrorCode;
                                         }
-                                    }
+                                    });
                                 }
                             }
                             return errorCode;
