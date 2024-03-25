@@ -27,7 +27,9 @@
                             var observer = new MutationObserver(function () {
                                 if (targetNode.style.display != 'none') {
                                     debugger;
+                                    $("#divBackToLogin").remove();
                                     var errorCode = GetCancelErrorCode();
+                                    $("#attributeList").after($("#claimVerificationServerError"))
                                     if (errorCode == "461") {
                                         $("#claimVerificationServerError").after("<div id='divBackToLogin' style='margin-top:10px;margin-bottom:10px;'><input id='InvitationCode' class='textInput' type='text' placeholder='Invitation Code' value='' title=demoCaim> </div>");
                                             $("#CurrentSignInStatus").val("AI");
