@@ -24,10 +24,11 @@
                           
                             var targetNode = document.getElementById('claimVerificationServerError');
                             debugger;
+                            $("#divBackToLogin").remove();
                             var observer = new MutationObserver(function () {
                                 if (targetNode.style.display != 'none') {
                                     debugger;
-                                    $("#divBackToLogin").remove();
+                                 
                                     var errorCode = GetCancelErrorCode();
                                     $("#attributeList").after($("#claimVerificationServerError"))
                                     if (errorCode == "461") {
