@@ -32,7 +32,7 @@
 
                                         if (error.ErrorMessage == currentErrorMessage) {
                                             errorCode = error.ErrorCode;
-                                            break;
+                                            return false;
                                         }
                                     });
                                 }
