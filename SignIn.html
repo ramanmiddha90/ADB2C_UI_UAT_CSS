@@ -102,7 +102,8 @@
                                 if (redirectURL == null)
                                     redirectURL = "";
                                 var redirectURI = GetParameterValues('redirect_uri');
-                                var url = decodeURIComponent(redirectURI) + "#error=" + errorCode + ":" + redirectURL;
+                                //var url = decodeURIComponent(redirectURI) + "#error=" + errorCode + ":" + redirectURL;
+                                var url = decodeURIComponent(redirectURI) + "#error=access_denied&error_description=AAD_Custom_" + errorCode + ":" + redirectURL;
                                 window.location.replace(url);
                                
 
