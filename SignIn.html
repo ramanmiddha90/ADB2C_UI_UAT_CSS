@@ -74,9 +74,9 @@
                         };
 
                         function AddPasswordResetLink() {
-                            $(".password_li").filter(":last").append("<div class='forgot-password center-height'><a id='forgotPassword' href=''>Forgot your password?</a></div>");
+                            $(".password_li").filter(":last").append("<div class='forgot-password center-height'><a id='forgotPassword' href=''>Forgot your password</a></div>");
                             $("#forgotPassword").click(function () {
-                                window.localStorage.href = "http://www.google.com";
+                                window.location.href = "http://www.google.com";
                             });
                         }
                         function GetParameterValues(param) {
