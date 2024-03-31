@@ -72,6 +72,13 @@
                             }
                             return errorCode;
                         };
+
+                        function AddPasswordResetLink() {
+                            $(".password_li").filter(":last").append("<div class='forgot-password center-height'><a id='forgotPassword' href=''>Forgot your password?</a></div>");
+                            $("#forgotPassword").click(function () {
+                                window.localStorage.href = "http://www.google.com";
+                            });
+                        }
                         function GetParameterValues(param) {
                             var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
                             for (var i = 0; i < url.length; i++) {
@@ -87,6 +94,7 @@
                         var continuteButton = document.getElementById('continue');
                         if (continuteButton && $("#continue").is(':visible')) {
 
+                            AddPasswordResetLink();
                             if ($("#CurrentSignInStatus")) {
                                 $("#CurrentSignInStatus").val("NF");
                             }
