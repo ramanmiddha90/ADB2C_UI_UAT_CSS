@@ -76,7 +76,7 @@
                         function AddPasswordResetLink() {
                             $(".password_li").filter(":last").append("<div class='forgot-password center-height'><a id='forgotPassword' href=''>Forgot your password</a></div>");
                             $("#forgotPassword").click(function () {
-                                window.location.href = "http://www.google.com";
+                                window.location.replace("https://novaciam.b2clogin.com/novaciam.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1A_SOLAR_Prod_PWRESET&client_id=6212ad2e-2398-42e7-892a-ce9b2ca803b6&nonce=defaultNonce&redirect_uri=https://prod.solar.my-sandoz.com/ru-ru/password-reset&scope=openid&response_type=id_token&ui_locales=ru&Version=2");
                             });
                         }
                         function GetParameterValues(param) {
