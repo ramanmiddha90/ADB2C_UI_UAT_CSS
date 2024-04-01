@@ -30,7 +30,9 @@
                             
                             var targetNode = document.getElementById('claimVerificationServerError');
                             debugger;
-                            $("#divInvitationCode").hide();
+                            if (window.localStorage.url.indexOf("B2C_1A_SOLAR_INVITATION") == -1) {
+                                $("#divInvitationCode").hide();
+                            }
                             var observer = new MutationObserver(function () {
                                 if (targetNode.style.display != 'none') {
                                     debugger;
