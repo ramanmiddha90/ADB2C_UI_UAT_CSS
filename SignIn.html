@@ -33,6 +33,9 @@
                             if (window.location.href.indexOf("B2C_1A_SOLAR_INVITATION") == -1) {
                                 $("#divInvitationCode").hide();
                             }
+                            else {
+                                $("#divInvitationCode").show();
+                            }
                             var observer = new MutationObserver(function () {
                                 if (targetNode.style.display != 'none') {
                                     debugger;
