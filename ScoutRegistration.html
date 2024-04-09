@@ -43,8 +43,8 @@
                             $("#customCancel").click(function () {
                                 debugger;
                                
-                                var redirectURL = GetParameterValues('redirect_URL'); //Encoded value FE URL
-                                if (redirectURL == null)
+                                var redirectURL = GetParameterValues('return_url'); //Encoded value FE URL
+                                if (redirectURL == null) t
                                     redirectURL = "";
                                 var redirectURI = GetParameterValues('redirect_uri');
                                 var url = decodeURIComponent(redirectURI) + "#error=access_denied&error_description=AAD_Custom_466:"+redirectURL;
