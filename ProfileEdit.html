@@ -45,6 +45,15 @@
                             }
 
                             $("#continue").after("<button id='customCancel'>Cancel</button>");
+                            $("#btnConsent").click(function () {
+
+                                var portalURL = $("#passwordResetPortalUserURl").val();
+
+                                if (portalURL != null && portalURL != undefined)
+                                    window.location.replace(url);
+                            });
+
+
                             $("#customCancel").click(function () {
                                 debugger;
 
@@ -90,13 +99,13 @@
             </div>
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                 <div class="buttons">
-                    <button id="continue" type="submit" form="attributeVerification" tabindex="-1">Password Reset</button>
+                    <button id="btnReset" type="submit" form="attributeVerification" tabindex="-1">Password Reset</button>
                 </div>
 
             </div>
             <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                 <div class="buttons">
-                    <button id="continue" type="submit" form="attributeVerification" tabindex="-1">Manage Consent</button>
+                    <button id="btnConsent" type="submit" form="attributeVerification" tabindex="-1">Manage Consent</button>
                 </div>
             </div>
         </div>
