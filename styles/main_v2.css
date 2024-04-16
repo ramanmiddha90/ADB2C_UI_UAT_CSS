@@ -146,8 +146,8 @@ border: 1px
 }
 
 select {
-    text-align:left !important;
-    font-size: 1rem;
+    text-align: left !important;
+    font-size: 18px !important;
     margin-bottom: 16px;
     margin-right: 16px;
     padding-bottom: 12px;
