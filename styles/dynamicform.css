@@ -27,8 +27,12 @@ margin-top: 75px;
 .invitedRegistration .intro p{
 display:none;
 }
-.profileEditinvalidUser .intro p{
-	display:none;
+
+.speciality_li, speciality_value_li, speciality_required_li {
+    display: none;
+}
+.profileEditinvalidUser .intro p {
+    display: none;
 }
 h1 {
     font-size: 20px;
