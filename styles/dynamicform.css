@@ -28,7 +28,7 @@ margin-top: 75px;
 display:none;
 }
 
-.speciality_li, speciality_value_li, speciality_required_li {
+.speciality_li, .speciality_value_li, .speciality_required_li {
     display: none;
 }
 .profileEditinvalidUser .intro p {
