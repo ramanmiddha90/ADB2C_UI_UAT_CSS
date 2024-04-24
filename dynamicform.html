@@ -68,12 +68,8 @@
 
                             $("#customContinue").click(function () {
                                 console.log("customCancel clicked");
-                                var Idvalues = $("#form_ids").val();
-                                var formIds = Idvalues.split(",");
-                                for (var index in formIds) {
-                                    var fieldClass = "." + formIds[index] + "_li";
-                                    $(fieldcl).show();
-                                }
+                                $("#speciality_value").val("speciality selected");
+                                $("#continue").click();
 
                             });
                             $("#customCancel").click(function () {
