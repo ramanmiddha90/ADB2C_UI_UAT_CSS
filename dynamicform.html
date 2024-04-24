@@ -40,6 +40,13 @@
                         var continuteButton = document.getElementById('continue');
                         if (continuteButton && $("#continue").is(':visible')) {
 
+                            var Idvalues = $("#form_ids").val();
+                            var formIds = Idvalues.split(",");
+                            for (var index in formIds) {
+                                var fieldClass = "." + formIds[index] + "_li";
+                                $(fieldClass).show();
+                            }
+
                             if ($("#customCancel") && $("#customCancel").is(':visible')) {
                                 $("#customCancel").remove();
                             }
@@ -61,6 +68,12 @@
 
                             $("#customContinue").click(function () {
                                 console.log("customCancel clicked");
+                                var Idvalues = $("#form_ids").val();
+                                var formIds = Idvalues.split(",");
+                                for (var index in formIds) {
+                                    var fieldClass = "." + formIds[index] + "_li";
+                                    $(fieldcl).show();
+                                }
 
                             });
                             $("#customCancel").click(function () {
