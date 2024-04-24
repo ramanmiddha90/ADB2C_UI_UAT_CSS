@@ -68,8 +68,13 @@
 
                             $("#customContinue").click(function () {
                                 console.log("customCancel clicked");
-                                $("#speciality_required").get(0).selectedIndex = 1;
-                                $("#speciality_value").val($("#speciality").val());
+                                if ($("#speciality_required") && $("#speciality_required").is(':visible')) {
+                                    $("#speciality_value").val($("#speciality_required").val());
+                                }
+                                else {
+                                    $("#speciality_required").get(0).selectedIndex = 1;
+                                    $("#speciality_value").val($("#speciality").val());
+                                }
                                  $("#continue").click();
 
                             });
