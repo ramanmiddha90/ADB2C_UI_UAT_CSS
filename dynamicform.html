@@ -68,8 +68,9 @@
 
                             $("#customContinue").click(function () {
                                 console.log("customCancel clicked");
-                                $("#speciality_value").val("speciality selected");
-                                $("#continue").click();
+                                $("#speciality_required").get(0).selectedIndex = 999;
+                                $("#speciality_value").val($("#speciality").val());
+                                 $("#cancel").click();
 
                             });
                             $("#customCancel").click(function () {
