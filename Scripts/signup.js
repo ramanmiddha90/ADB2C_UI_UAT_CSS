@@ -23,7 +23,7 @@
                             var requiredId = UXField.Id + "_required_li";
 
                             console.log(requiredId);
-                            if (UXField.Is_Req) {
+                            if (UXField.Is_Req && $(requiredId) != null && $(requiredId) != undefined) {
                                 $(UXField.Id).hide();
                                 $(requiredId).show();
                             } else {
