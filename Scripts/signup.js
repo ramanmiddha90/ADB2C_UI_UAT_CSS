@@ -71,6 +71,8 @@
                         var redirectURI = GetParameterValues('redirect_uri');
                         var url = decodeURIComponent(redirectURI) + "#error=access_denied&error_description=AAD_Custom_466:" + returnUrl;
                         window.location.replace(url);
+                        debugger;
+                        console.log("called after");
 
 
                     });
