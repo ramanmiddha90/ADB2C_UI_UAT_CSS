@@ -20,9 +20,9 @@
                     fieldInfo.Fields_Info.forEach(function (UXField) {
                         if (!UXField.Is_Mandatory) {
                             var fieldAttr = "." + UXField.Id + "_li";
-                            var requiredFieldAttr = "."+UXField.Id + "_required_li";
+                            var requiredFieldAttr = "." + UXField.Id + "_required_li";
                             console.log(requiredFieldAttr);
-                            if (UXField.Is_Req && $(requiredFieldAttr) != null && $(requiredFieldAttr) != undefined) {
+                            if (UXField.Is_Req && $(requiredFieldAttr) != null && $(requiredFieldAttr) != undefined && $(requiredFieldAttr).length > 0) {
                                 $(fieldAttr).hide();
                                 $(requiredFieldAttr).show();
                             } else {
