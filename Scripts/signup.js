@@ -18,6 +18,11 @@
                 var continuteButton = document.getElementById('continue');
                 if (continuteButton && $("#continue").is(':visible')) {
 
+                    $("#continue").click(function (e) {
+                        debugger;
+                        e.preventDefault();
+                    });
+
                     var Idvalues = $("#form_ids").val();
                     var formIds = Idvalues.split(",");
                     for (var index in formIds) {
