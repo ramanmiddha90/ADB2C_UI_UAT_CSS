@@ -21,6 +21,7 @@
                     $("#continue").click(function (e) {
                         debugger;
                         e.preventDefault();
+                        e.stopPropagation();
                     });
 
                     var Idvalues = $("#form_ids").val();
