@@ -28,6 +28,24 @@
                             } else {
                                 $(fieldAttr).show();
                                 $(requiredFieldAttr).hide();
+                                $(requiredFieldAttr).get(0).selectedIndex = 1;
+                            }
+                        }
+                    });
+                }
+                function setFieldValues() {
+                    var fieldInfo = $.parseJSON($("#FieldInfo").val());
+                    fieldInfo.Fields_Info.forEach(function (UXField) {
+                        if (!UXField.Is_Mandatory) {
+                            var fieldAttr = "#" + UXField.Id;
+                            var requiredFieldAttr = "#" + UXField.Id + "_required";
+                            console.log(requiredFieldAttr);
+                            if (UXField.Is_Req &&  $(requiredFieldAttr).is(':visible')) {
+                                $(fieldAttr).val($(requiredFieldAttr).val());
+                            } 
+                            else {
+                                //if dropdwon set default index 1
+                                $(requiredFieldAttr).get(0).selectedIndex = 1;
                             }
                         }
                     });
@@ -38,9 +56,7 @@
                     loadFields();
 
                     $("#continue").click(function (e) {
-                        debugger;
-                        e.preventDefault();
-                        e.stopPropagation();
+                        setFieldValues();
                     });
                     $("#Cancel").click(function () {
                         var returnUrl = GetParameterValues('return_url'); //Encoded value FE URL
