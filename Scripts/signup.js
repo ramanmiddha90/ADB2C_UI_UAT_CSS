@@ -18,9 +18,18 @@
 
                     var fieldInfo = $.parseJSON($("#FieldInfo").val());
                     fieldInfo.Fields_Info.forEach(function (UXField) {
-                       
                         if (!UXField.Is_Mandatory) {
-                            console.log(UXField.Id);
+
+                            var requiredId = UXField.Id + "_required_li";
+
+                            console.log(requiredId);
+                            if (UXField.Is_Req) {
+                                $(UXField.Id).hide();
+                                $(requiredId).show();
+                            } else {
+                                $(UXField.Id).show();
+                                $(requiredId).hide();
+                            }
                         }
                     });
                 }
