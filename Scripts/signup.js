@@ -16,11 +16,13 @@
 
                 function loadFields() {
 
-                    console.log($("#FieldInfo").val());
                     var fieldInfo = $.parseJSON($("#FieldInfo").val());
-                    //fieldInfo.Fields_Info.forEach(function (UXField) {
-                    //    console.log(UXField.Id);
-                    //});
+                    fieldInfo.Fields_Info.forEach(function (UXField) {
+                       
+                        if (!UXField.Is_Mandatory) {
+                            console.log(UXField.Id);
+                        }
+                    });
                 }
                 var continuteButton = document.getElementById('continue');
                 if (continuteButton && $("#continue").is(':visible')) {
