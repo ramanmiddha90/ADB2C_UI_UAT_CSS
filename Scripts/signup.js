@@ -19,15 +19,15 @@
                     var fieldInfo = $.parseJSON($("#FieldInfo").val());
                     fieldInfo.Fields_Info.forEach(function (UXField) {
                         if (!UXField.Is_Mandatory) {
-
-                            var requiredIdClass = "."+UXField.Id + "_required_li";
-                            console.log(requiredIdClass);
-                            if (UXField.Is_Req && $(requiredIdClass) != null && $(requiredIdClass) != undefined) {
-                                $(UXField.Id).hide();
-                                $(requiredIdClass).show();
+                            var fieldAttr = "." + UXField.Id + "_li";
+                            var requiredFieldAttr = "."+UXField.Id + "_required_li";
+                            console.log(requiredFieldAttr);
+                            if (UXField.Is_Req && $(requiredFieldAttr) != null && $(requiredFieldAttr) != undefined) {
+                                $(fieldAttr).hide();
+                                $(requiredFieldAttr).show();
                             } else {
-                                $(UXField.Id).show();
-                                $(requiredIdClass).hide();
+                                $(fieldAttr).show();
+                                $(requiredFieldAttr).hide();
                             }
                         }
                     });
