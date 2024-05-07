@@ -21,7 +21,7 @@
                         if (!UXField.Is_Mandatory) {
 
                             var requiredIdClass = "."+UXField.Id + "_required_li";
-                            console.log(requiredId);
+                            console.log(requiredIdClass);
                             if (UXField.Is_Req && $(requiredIdClass) != null && $(requiredIdClass) != undefined) {
                                 $(UXField.Id).hide();
                                 $(requiredIdClass).show();
