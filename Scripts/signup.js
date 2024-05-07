@@ -20,15 +20,14 @@
                     fieldInfo.Fields_Info.forEach(function (UXField) {
                         if (!UXField.Is_Mandatory) {
 
-                            var requiredId = UXField.Id + "_required_li";
-
+                            var requiredIdClass = "."+UXField.Id + "_required_li";
                             console.log(requiredId);
-                            if (UXField.Is_Req && $(requiredId) != null && $(requiredId) != undefined) {
+                            if (UXField.Is_Req && $(requiredIdClass) != null && $(requiredIdClass) != undefined) {
                                 $(UXField.Id).hide();
-                                $(requiredId).show();
+                                $(requiredIdClass).show();
                             } else {
                                 $(UXField.Id).show();
-                                $(requiredId).hide();
+                                $(requiredIdClass).hide();
                             }
                         }
                     });
