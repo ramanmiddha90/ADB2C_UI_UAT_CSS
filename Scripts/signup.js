@@ -73,17 +73,14 @@
                     $("#continue").click(function (e) {
                         setFieldValues();
                     });
-                    $("#Cancel").click(function () {
+                    $("#cancel").click(function (e) {
                         var returnUrl = GetParameterValues('return_url'); //Encoded value FE URL
                         if (returnUrl == null)
                             returnUrl = "";
                         var redirectURI = GetParameterValues('redirect_uri');
                         var url = decodeURIComponent(redirectURI) + "#error=access_denied&error_description=AAD_Custom_466:" + returnUrl;
                         window.location.replace(url);
-                        debugger;
-                        console.log("called after");
-
-
+                        e.stopPropagation();
                     });
                     clearInterval(intervalHandle);
                 }
