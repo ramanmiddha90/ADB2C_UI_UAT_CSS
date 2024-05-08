@@ -66,14 +66,15 @@
                         }
                     });
                 }
-                var continuteButton = document.getElementById('continue');
-                if (continuteButton && $("#continue").is(':visible')) {
+                function setUIElements() {
+                    if ($("#customCancel") && $("#customCancel").is(':visible')) {
+                        $("#customCancel").remove();
+                    }
 
-                    loadFields();
-                    $("#continue").click(function (e) {
-                        setFieldValues();
-                    });
-                    $("#cancel").click(function (e) {
+                    $("#continue").after("<button id='customCancel'>Cancel</button>");
+                }
+                function AttachCancelEvent() {
+                    $("#customCancel").click(function (e) {
                         var returnUrl = GetParameterValues('return_url'); //Encoded value FE URL
                         if (returnUrl == null)
                             returnUrl = "";
@@ -81,6 +82,16 @@
                         var url = decodeURIComponent(redirectURI) + "#error=access_denied&error_description=AAD_Custom_466:" + returnUrl;
                         window.location.replace(url);
                         e.stopPropagation();
+                    });
+                }
+                var continuteButton = document.getElementById('continue');
+                if (continuteButton && $("#continue").is(':visible')) {
+
+                    loadFields();
+                    setUIElements();
+                    AttachCancelEvent();
+                    $("#continue").click(function (e) {
+                        setFieldValues();
                     });
                     clearInterval(intervalHandle);
                 }
