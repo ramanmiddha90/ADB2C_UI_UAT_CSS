@@ -28,13 +28,15 @@
                                 $(requiredFieldAttr).show();
                             } else {
                                 $(fieldAttr).show();
-                                $(requiredFieldAttr).hide();
-                                if (UXField.InputType == "Dropdown") {
-                                    //if dropdwon set default index 1
-                                    $(requiredFieldId).get(0).selectedIndex = 1;
-                                }
-                                else {
-                                    $(requiredFieldId).val("na");
+                                if ($(requiredFieldAttr).length > 0) {
+                                    $(requiredFieldAttr).hide();
+                                    if (UXField.InputType == "Dropdown") {
+                                        //if dropdwon set default index 1
+                                        $(requiredFieldId).get(0).selectedIndex = 1;
+                                    }
+                                    else {
+                                        $(requiredFieldId).val("na");
+                                    }
                                 }
                             }
                         }
@@ -51,12 +53,14 @@
                                 $(fieldAttr).val($(requiredFieldAttr).val());
                             } 
                             else {
-                                if (UXField.InputType == "Dropdown") {
-                                    //if dropdwon set default index 1
-                                    $(requiredFieldAttr).get(0).selectedIndex = 1;
-                                }
-                                else {
-                                    $(requiredFieldAttr).val("na");
+                                if ($(requiredFieldAttr).length > 0) {
+                                    if (UXField.InputType == "Dropdown") {
+                                        //if dropdwon set default index 1
+                                        $(requiredFieldAttr).get(0).selectedIndex = 1;
+                                    }
+                                    else {
+                                        $(requiredFieldAttr).val("na");
+                                    }
                                 }
                             }
                         }
