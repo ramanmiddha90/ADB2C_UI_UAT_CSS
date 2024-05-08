@@ -21,6 +21,7 @@
                         if (!UXField.Is_Mandatory) {
                             var fieldAttr = "." + UXField.Id + "_li";
                             var requiredFieldAttr = "." + UXField.Id + "_required_li";
+                            var requiredFieldId = "#" + UXField.Id + "_required";
                             console.log(requiredFieldAttr);
                             if (UXField.Is_Req && $(requiredFieldAttr) != null && $(requiredFieldAttr) != undefined && $(requiredFieldAttr).length > 0) {
                                 $(fieldAttr).hide();
@@ -28,7 +29,13 @@
                             } else {
                                 $(fieldAttr).show();
                                 $(requiredFieldAttr).hide();
-                                $(requiredFieldAttr).get(0).selectedIndex = 1;
+                                if (UXField.InputType == "Dropdown") {
+                                    //if dropdwon set default index 1
+                                    $(requiredFieldId).get(0).selectedIndex = 1;
+                                }
+                                else {
+                                    $(requiredFieldId).val("na");
+                                }
                             }
                         }
                     });
@@ -44,8 +51,13 @@
                                 $(fieldAttr).val($(requiredFieldAttr).val());
                             } 
                             else {
-                                //if dropdwon set default index 1
-                                $(requiredFieldAttr).get(0).selectedIndex = 1;
+                                if (UXField.InputType == "Dropdown") {
+                                    //if dropdwon set default index 1
+                                    $(requiredFieldAttr).get(0).selectedIndex = 1;
+                                }
+                                else {
+                                    $(requiredFieldAttr).val("na");
+                                }
                             }
                         }
                     });
@@ -54,7 +66,6 @@
                 if (continuteButton && $("#continue").is(':visible')) {
 
                     loadFields();
-
                     $("#continue").click(function (e) {
                         setFieldValues();
                     });
