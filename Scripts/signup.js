@@ -3,7 +3,7 @@
         function () {
             if (window.pageReady) {
                 function GetParameterValues(param) {
-                    var url = document.referrer.slice(window.location.href.indexOf('?') + 1).split('&');
+                    var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
                     for (var i = 0; i < url.length; i++) {
                         var urlparam = url[i].split('=');
                         if (urlparam[0].toUpperCase() == param.toUpperCase()) {
