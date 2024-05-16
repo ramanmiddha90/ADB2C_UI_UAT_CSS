@@ -64,8 +64,16 @@
                             var fieldAttr = "#" + UXField.Id;
                             var requiredFieldAttr = "#" + UXField.Id + "_required";
                            
-                            if (UXField.Is_Req &&  $(requiredFieldAttr).is(':visible')) {
-                                $(fieldAttr).val($(requiredFieldAttr).val());
+                            if (UXField.Is_Req && $(requiredFieldAttr).is(':visible')) {
+                                if (UXField.InputType == "Dropdown") {
+                                    $(fieldAttr).val($(requiredFieldAttr).val());
+                                    //if dropdwon set default index 1
+                                    $(fieldAttr).get(0).selectedIndex = $(requiredFieldAttr).get(0).selectedIndex;
+                                }
+                                else {
+                                    $(fieldAttr).val($(requiredFieldAttr).val());
+                                }
+                               
                             } 
                             else {
                                 if ($(requiredFieldAttr).length > 0) {
@@ -82,11 +90,18 @@
                     });
                 }
                 function setUIElements() {
+
                     if ($("#customCancel") && $("#customCancel").is(':visible')) {
                         $("#customCancel").remove();
                     }
+                    if ($("#customContinue") && $("#customContinue").is(':visible')) {
+                        $("#customContinue").remove();
+                    }
 
                     $("#continue").after("<button id='customCancel'>Cancel</button>");
+
+                    $("#continue").after("<button id='customContinue'>Continue</button>");
+                    $("#continue").hide();
                 }
                 function AttachCancelEvent() {
                     $("#customCancel").click(function (e) {
@@ -117,9 +132,10 @@
                     setUIElements();
                     AttachCancelEvent();
 
-                    $("#continue").click(function (e) {
+                    $("#customContinue").click(function (e) {
                         setFieldValues();
                         SetConsentCheckBoxesValue();
+                        $("#continue").click();
                     });
                     clearInterval(intervalHandle);
                 }
