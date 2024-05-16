@@ -90,18 +90,11 @@
                     });
                 }
                 function setUIElements() {
-
                     if ($("#customCancel") && $("#customCancel").is(':visible')) {
                         $("#customCancel").remove();
                     }
-                    if ($("#customContinue") && $("#customContinue").is(':visible')) {
-                        $("#customContinue").remove();
-                    }
 
                     $("#continue").after("<button id='customCancel'>Cancel</button>");
-
-                    $("#continue").after("<button id='customContinue'>Continue</button>");
-                    $("#continue").hide();
                 }
                 function AttachCancelEvent() {
                     $("#customCancel").click(function (e) {
@@ -132,7 +125,7 @@
                     setUIElements();
                     AttachCancelEvent();
 
-                    $("#customContinue").click(function (e) {
+                    $("#continue").click(function (e) {
                         setFieldValues();
                         SetConsentCheckBoxesValue();
                         $("#continue").click();
