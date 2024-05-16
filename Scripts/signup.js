@@ -101,18 +101,14 @@
                 }
                 function SetConsentCheckBoxesValue() {
                     var consentCheckBoxes = $(".attrEntry :checkbox");
-
-                    if (consentCheckBoxes != null && consentCheckBoxes.length > 0) {
-
-                        for (var item in consentCheckBoxes) {
-                            if (consentCheckBoxes[item].checked) {
-                                consentCheckBoxes[item].value = "true";
-                            }
-                            else {
-                                consentCheckBoxes[item].value = "false";
-                            }
+                    $.each(consentCheckBoxes, function (index, checkBoxItem) {
+                        if (checkBoxItem.checked) {
+                            checkBoxItem.value = "true";
                         }
-                    }
+                        else {
+                            checkBoxItem.value = "false";
+                        }
+                    });
                 }
                 var continuteButton = document.getElementById('continue');
                 if (continuteButton && $("#continue").is(':visible')) {
