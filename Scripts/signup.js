@@ -103,10 +103,10 @@
                     var consentCheckBoxes = $(".attrEntry :checkbox");
                     $.each(consentCheckBoxes, function (index, checkBoxItem) {
                         if (checkBoxItem.checked) {
-                            checkBoxItem.value = "true";
+                            checkBoxItem.value = "1";
                         }
                         else {
-                            checkBoxItem.value = "false";
+                            checkBoxItem.value = "0";
                         }
                     });
                 }
