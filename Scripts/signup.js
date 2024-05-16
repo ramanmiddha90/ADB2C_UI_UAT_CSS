@@ -128,7 +128,7 @@
                     $("#continue").click(function (e) {
                         setFieldValues();
                         SetConsentCheckBoxesValue();
-                        $("#continue").click();
+                        //$("#continue").click();
                     });
                     clearInterval(intervalHandle);
                 }
