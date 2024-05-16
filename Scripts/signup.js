@@ -99,12 +99,28 @@
                         e.stopPropagation();
                     });
                 }
+                function SetConsentCheckBoxesValue() {
+                    var consentCheckBoxes = $(".attrEntry :checkbox");
+
+                    if (consentCheckBoxes != null && consentCheckBoxes.length > 0) {
+
+                        for (var consentCheckBox in consentCheckBoxes) {
+                            if (consentCheckBox.checked) {
+                                consentCheckBox.value = "true";
+                            }
+                            else {
+                                consentCheckBox.value = "false";
+                            }
+                        }
+                    }
+                }
                 var continuteButton = document.getElementById('continue');
                 if (continuteButton && $("#continue").is(':visible')) {
 
                     loadFields();
                     setUIElements();
                     AttachCancelEvent();
+                    SetConsentCheckBoxesValue();
                     $("#continue").click(function (e) {
                         setFieldValues();
                     });
