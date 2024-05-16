@@ -99,9 +99,12 @@
                     }
 
                     $("#continue").after("<button id='customCancel'>Cancel</button>");
+                    
 
                     $("#continue").after("<button id='customContinue'>Continue</button>");
                     $("#continue").hide();
+                    $("#customCancel").text($("#cancel").text())
+                    $("#customContinue").text($("#continue").text())
                 }
                 function AttachCancelEvent() {
                     $("#customCancel").click(function (e) {
