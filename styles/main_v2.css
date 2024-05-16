@@ -34,10 +34,13 @@ h1 {
     font-size: 20px;
     font-weight: bold;
 }
-
+fieldset label
+{
+    height: auto;
+}
 .wrapper {
-width:100%;
-background-color: white;
+    width: 100%;
+    background-color: white;
 }
 
 .intro {

@@ -100,15 +100,15 @@
                     });
                 }
                 function SetConsentCheckBoxesValue() {
-                    var consentCheckBoxes = $(".attrEntry :checkbox");
-                    $.each(consentCheckBoxes, function (index, checkBoxItem) {
-                        if (checkBoxItem.checked) {
-                            checkBoxItem.value = "1";
-                        }
-                        else {
-                            checkBoxItem.value = "0";
-                        }
-                    });
+                    //var consentCheckBoxes = $(".attrEntry :checkbox");
+                    //$.each(consentCheckBoxes, function (index, checkBoxItem) {
+                    //    if (checkBoxItem.checked) {
+                    //        checkBoxItem.value = "1";
+                    //    }
+                    //    else {
+                    //        checkBoxItem.value = "0";
+                    //    }
+                    //});
                 }
                 var continuteButton = document.getElementById('continue');
                 if (continuteButton && $("#continue").is(':visible')) {
