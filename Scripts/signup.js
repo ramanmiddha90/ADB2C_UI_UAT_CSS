@@ -104,12 +104,12 @@
 
                     if (consentCheckBoxes != null && consentCheckBoxes.length > 0) {
 
-                        for (var consentCheckBox in consentCheckBoxes) {
-                            if (consentCheckBox.checked) {
-                                consentCheckBox.value = "true";
+                        for (var item in consentCheckBoxes) {
+                            if (consentCheckBoxes[item].checked) {
+                                consentCheckBoxes[item].value = "true";
                             }
                             else {
-                                consentCheckBox.value = "false";
+                                consentCheckBoxes[item].value = "false";
                             }
                         }
                     }
