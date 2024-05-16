@@ -120,9 +120,10 @@
                     loadFields();
                     setUIElements();
                     AttachCancelEvent();
-                    SetConsentCheckBoxesValue();
+
                     $("#continue").click(function (e) {
                         setFieldValues();
+                        SetConsentCheckBoxesValue();
                     });
                     clearInterval(intervalHandle);
                 }
