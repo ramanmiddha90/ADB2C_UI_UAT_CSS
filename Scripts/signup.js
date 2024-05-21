@@ -1,1 +1,136 @@
-!function e() { var n = setInterval(function () { if (window.pageReady) { function e(e) { for (var n = window.location.href.slice(window.location.href.indexOf("?") + 1).split("&"), t = 0; t < n.length; t++) { var i = n[t].split("="); if (i[0].toUpperCase() == e.toUpperCase()) return i[1] } return null } document.getElementById("continue") && $("#continue").is(":visible") && ($.parseJSON($("#FieldInfo").val()).Fields_Info.forEach(function (e) { var n = "." + e.Id + "_li", t = "." + e.Id + "_required_li", i = "#" + e.Id + "_required"; console.log(t), e.Is_Visible ? e.Is_Req && null != $(t) && void 0 != $(t) && $(t).length > 0 ? ($(n).hide(), $(t).show()) : ($(n).show(), $(t).length > 0 && ($(t).hide(), "Dropdown" == e.InputType ? $(i).get(0).selectedIndex = 1 : $(i).val("na"))) : ($(n).hide(), $(t).length > 0 && ($(t).hide(), "Dropdown" == e.InputType ? $(i).get(0).selectedIndex = 1 : $(i).val("na"))) }), $("#customCancel") && $("#customCancel").is(":visible") && $("#customCancel").remove(), $("#customContinue") && $("#customContinue").is(":visible") && $("#customContinue").remove(), $("#continue").after("<button id='customCancel'>Cancel</button>"), $("#continue").after("<button id='customContinue'>Continue</button>"), $("#continue").hide(), $("#customCancel").text($("#cancel").text()), $("#customContinue").text($("#continue").text()), $("#customCancel").click(function (n) { var t = e("return_url"); null == t && (t = ""); var i = e("redirect_uri"), o = decodeURIComponent(i) + "#error=access_denied&error_description=AAD_Custom_466:" + t; window.location.replace(o), n.stopPropagation() }), $("#customContinue").click(function (e) { $.parseJSON($("#FieldInfo").val()).Fields_Info.forEach(function (e) { if (e.Is_Visible) { var n = "#" + e.Id, t = "#" + e.Id + "_required"; e.Is_Req && $(t).is(":visible") ? "Dropdown" == e.InputType ? ($(n).val($(t).val()), $(n).get(0).selectedIndex = $(t).get(0).selectedIndex) : $(n).val($(t).val()) : $(t).length > 0 && ("Dropdown" == e.InputType ? $(t).get(0).selectedIndex = 1 : $(t).val("na")) } }), SetConsentCheckBoxesValue(), $("#continue").click() }), clearInterval(n)) } }, 50) }();
+(function onPageReady() {
+    var intervalHandle = setInterval(
+        function () {
+            if (window.pageReady) {
+                function GetParameterValues(param) {
+                    var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+                    for (var i = 0; i < url.length; i++) {
+                        var urlparam = url[i].split('=');
+                        if (urlparam[0].toUpperCase() == param.toUpperCase()) {
+                            return urlparam[1];
+                        }
+
+                    }
+                    return null;
+                };
+
+
+                function loadFields() {
+
+                    var fieldInfo = $.parseJSON($("#FieldInfo").val());
+                    fieldInfo.Fields_Info.forEach(function (UXField) {
+                        var fieldAttr = "." + UXField.Id + "_li";
+                        var requiredFieldAttr = "." + UXField.Id + "_required_li";
+                        var requiredFieldId = "#" + UXField.Id + "_required";
+                        console.log(requiredFieldAttr);
+                        if (UXField.Is_Visible) {
+                            if (UXField.Is_Req && $(requiredFieldAttr) != null && $(requiredFieldAttr) != undefined && $(requiredFieldAttr).length > 0) {
+                                $(fieldAttr).hide();
+                                $(requiredFieldAttr).show();
+                            }
+                            else {
+                                $(fieldAttr).show();
+                                if ($(requiredFieldAttr).length > 0) {
+                                    $(requiredFieldAttr).hide();
+                                    if (UXField.InputType == "Dropdown") {
+                                        //if dropdwon set default index 1
+                                        $(requiredFieldId).get(0).selectedIndex = 1;
+                                    }
+                                    else {
+                                        $(requiredFieldId).val("na");
+                                    }
+                                }
+                            }
+                        }
+                        else {
+                            $(fieldAttr).hide();
+                            if ($(requiredFieldAttr).length > 0) {
+                                $(requiredFieldAttr).hide();
+                                if (UXField.InputType == "Dropdown") {
+                                    //if dropdwon set default index 1
+                                    $(requiredFieldId).get(0).selectedIndex = 1;
+                                }
+                                else {
+                                    $(requiredFieldId).val("na");
+                                }
+                            }
+                        }
+                    });
+                }
+                function setFieldValues() {
+                    var fieldInfo = $.parseJSON($("#FieldInfo").val());
+                    fieldInfo.Fields_Info.forEach(function (UXField) {
+                        if (UXField.Is_Visible) {
+                            var fieldAttr = "#" + UXField.Id;
+                            var requiredFieldAttr = "#" + UXField.Id + "_required";
+
+                            if (UXField.Is_Req && $(requiredFieldAttr).is(':visible')) {
+                                if (UXField.InputType == "Dropdown") {
+                                    $(fieldAttr).val($(requiredFieldAttr).val());
+                                    //if dropdwon set default index 1
+                                    $(fieldAttr).get(0).selectedIndex = $(requiredFieldAttr).get(0).selectedIndex;
+                                }
+                                else {
+                                    $(fieldAttr).val($(requiredFieldAttr).val());
+                                }
+
+                            }
+                            else {
+                                if ($(requiredFieldAttr).length > 0) {
+                                    if (UXField.InputType == "Dropdown") {
+                                        //if dropdwon set default index 1
+                                        $(requiredFieldAttr).get(0).selectedIndex = 1;
+                                    }
+                                    else {
+                                        $(requiredFieldAttr).val("na");
+                                    }
+                                }
+                            }
+                        }
+                    });
+                }
+                function setUIElements() {
+
+                    if ($("#customCancel") && $("#customCancel").is(':visible')) {
+                        $("#customCancel").remove();
+                    }
+                    if ($("#customContinue") && $("#customContinue").is(':visible')) {
+                        $("#customContinue").remove();
+                    }
+
+                    $("#continue").after("<button id='customCancel'>Cancel</button>");
+
+
+                    $("#continue").after("<button id='customContinue'>Continue</button>");
+                    $("#continue").hide();
+                    $("#customCancel").text($("#cancel").text())
+                    $("#customContinue").text($("#continue").text())
+                }
+                function AttachCancelEvent() {
+                    $("#customCancel").click(function (e) {
+                        var returnUrl = GetParameterValues('return_url'); //Encoded value FE URL
+                        if (returnUrl == null)
+                            returnUrl = "";
+                        var redirectURI = GetParameterValues('redirect_uri');
+                        var url = decodeURIComponent(redirectURI) + "#error=access_denied&error_description=AAD_Custom_466:" + returnUrl;
+                        window.location.replace(url);
+                        e.stopPropagation();
+                    });
+                }
+                var continuteButton = document.getElementById('continue');
+                if (continuteButton && $("#continue").is(':visible')) {
+
+                    loadFields();
+                    setUIElements();
+                    AttachCancelEvent();
+
+                    $("#customContinue").click(function (e) {
+                        setFieldValues();
+                        SetConsentCheckBoxesValue();
+                        $("#continue").click();
+                    });
+                    clearInterval(intervalHandle);
+                }
+            }
+        }, 50);
+}());
