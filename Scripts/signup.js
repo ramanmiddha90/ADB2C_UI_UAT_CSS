@@ -1,4 +1,6 @@
 (function onPageReady() {
+    var SIGN_IN_POLICY = "B2C_1A_SOLAR_LOGIN";
+    var SIGN_UP_POLICY = "B2C_1A_SOLAR_SIGNUP";
     var intervalHandle = setInterval(
         function () {
             if (window.pageReady) {
@@ -13,6 +15,18 @@
                     }
                     return null;
                 };
+
+                function GetRedirectURLFromReferrer(param) {
+                    var url = document.referrer.slice(document.referrer.indexOf('?') + 1).split('&');
+                    for (var i = 0; i < url.length; i++) {
+                        var urlparam = url[i].split('=');
+                        if (urlparam[0].toUpperCase() == param.toUpperCase()) {
+                            return urlparam[1];
+                        }
+
+                    }
+                    return null;
+                }
 
 
                 function loadFields() {
@@ -89,6 +103,13 @@
                         }
                     });
                 }
+
+                function IsSignInFlow() {
+                    if (window.location.href.includes(SIGN_IN_POLICY))
+                        return true;
+
+                    return false;
+                }
                 function setUIElements() {
 
                     if ($("#customCancel") && $("#customCancel").is(':visible')) {
@@ -111,7 +132,14 @@
                         var returnUrl = GetParameterValues('return_url'); //Encoded value FE URL
                         if (returnUrl == null)
                             returnUrl = "";
-                        var redirectURI = GetParameterValues('redirect_uri');
+                        var redirectURI = "";
+                        if (IsSignInFlow()) {
+                            redirectURI = GetRedirectURLFromReferrer('redirect_uri');
+                        }
+                        else {
+                             redirectURI = GetParameterValues('redirect_uri');
+                         
+                        }
                         var url = decodeURIComponent(redirectURI) + "#error=access_denied&error_description=AAD_Custom_466:" + returnUrl;
                         window.location.replace(url);
                         e.stopPropagation();
