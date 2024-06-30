@@ -48,7 +48,7 @@
 
                                 if (error.Code == code) {
                                     message = error.Message;
-                                    break;
+                                    return false;
                                 }
                             });
                         }
