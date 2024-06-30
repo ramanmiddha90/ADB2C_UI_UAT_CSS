@@ -37,7 +37,7 @@
                     observer.observe(targetNode, { attributes: true, childList: true });
                 };
 
-                function GetTextBasedOnCode(code,defaultValue) {
+                function GetTextBasedOnCode(code, defaultValue) {
                     var message = defaultValue;
                     try {
                         if ($("#ErrorMappings") != null) {
@@ -47,7 +47,8 @@
                             UI_Locales.StatusMapping.forEach(function (error) {
 
                                 if (error.Code == code) {
-                                    return error.Message;
+                                    message = error.Message;
+                                    break;
                                 }
                             });
                         }
