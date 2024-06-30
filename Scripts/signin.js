@@ -47,8 +47,8 @@
 
                             errorList.ErrorMapping.forEach(function (error) {
 
-                                if (error.ErrorMessage == currentErrorMessage) {
-                                    errorCode = error.ErrorCode;
+                                if (error.Message == currentErrorMessage) {
+                                    errorCode = error.Code;
                                     return false;
                                 }
                             });

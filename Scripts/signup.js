@@ -154,7 +154,6 @@
 
                     $("#customContinue").click(function (e) {
                         setFieldValues();
-                        //SetConsentCheckBoxesValue();
                         $("#continue").click();
                     });
                     clearInterval(intervalHandle);
