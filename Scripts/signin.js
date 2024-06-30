@@ -19,7 +19,7 @@
                         if (targetNode.style.display != 'none') {
                             //debugger;
 
-                            var errorCode = GetCancelErrorCode();
+                            var errorCode = GetCancelCodeBasedOnMessage();
                             $("#attributeList").after($("#claimVerificationServerError"))
                             if (errorCode == "461") {
                                 $("#invitationCode").val("");
