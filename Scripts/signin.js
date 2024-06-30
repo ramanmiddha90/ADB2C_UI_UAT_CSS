@@ -101,6 +101,9 @@
 
                     $("#continue").after("<button id='customCancel'>Cancel</button>");
                     $(".password_li").filter(":last").append("<div class='forgot-password center-height'><a id='resetPassword' href='javascript:undefined'>Forgot your password?</a></div>");
+
+                    var forgortPassMesage = GetTextBasedOnCode('lbl_ForgotPassword');
+                    console.log(forgortPassMesage);
                     //$("#resetPassword").text(GetTextBasedOnCode("lbl_ForgotPassword"));
                     $("#customCancel").text($("#cancel").text())
                     $("#resetPassword").click(function (event) {
