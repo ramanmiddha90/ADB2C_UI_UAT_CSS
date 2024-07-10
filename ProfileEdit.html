@@ -26,11 +26,20 @@
                     if (window.pageReady) {
 
                         function GetParameterValues(param) {
-                            var url = document.referrer.slice(window.location.href.indexOf('?') + 1).split('&');
+
+                            var url = document.referrer.slice(window.referrer.indexOf('?') + 1).split('&');
                             for (var i = 0; i < url.length; i++) {
                                 var urlparam = url[i].split('=');
                                 if (urlparam[0].toUpperCase() == param.toUpperCase()) {
                                     return urlparam[1];
+                                }
+
+                            }
+                            var currentURL = document.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+                            for (var i = 0; i < currentURL.length; i++) {
+                                var currentURLParams = currentURL[i].split('=');
+                                if (currentURLParams[0].toUpperCase() == param.toUpperCase()) {
+                                    return currentURLParams[1];
                                 }
 
                             }
