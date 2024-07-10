@@ -27,7 +27,7 @@
 
                         function GetParameterValues(param) {
                             if (document.referrer != undefined) {
-                                var url = document.referrer.slice(window.referrer.indexOf('?') + 1).split('&');
+                                var url = document.referrer.slice(document.referrer.indexOf('?') + 1).split('&');
                                 for (var i = 0; i < url.length; i++) {
                                     var urlparam = url[i].split('=');
                                     if (urlparam[0].toUpperCase() == param.toUpperCase()) {
@@ -36,7 +36,7 @@
 
                                 }
                             }
-                            var currentURL = document.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+                            var currentURL = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
                             for (var i = 0; i < currentURL.length; i++) {
                                 var currentURLParams = currentURL[i].split('=');
                                 if (currentURLParams[0].toUpperCase() == param.toUpperCase()) {
