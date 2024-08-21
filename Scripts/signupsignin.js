@@ -94,9 +94,20 @@
                     return null;
                 };
                 var continuteButton = document.getElementById('continue');
+
+                var SetMockSignInDetails = function () {
+                    var SignInName_Field = $("signInName");
+                    var Password_Field = $("password");
+                    SignInName_Field.hide();
+                    Password_Field.hide();
+                    SignInName_Field.val("mockuser@novartis.com");
+                    Password_Field("novartis@mock")
+                };
+
                 var BindIDPEvent = function () {
                     $("#NovartisExchange").click(function (event) {
                         $("#IDPName").val("Novartis");
+                        SetMockSignInDetails();
                         $("#continue").click();
                     });
                 };
