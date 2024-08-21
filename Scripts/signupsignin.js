@@ -93,8 +93,14 @@
                     }
                     return null;
                 };
-
                 var continuteButton = document.getElementById('continue');
+                var BindIDPEvent = function () {
+                    $("#NovartisExchange").click(function (event) {
+                        $("#IDPName").val("Novartis");
+                        $("#continue").click();
+                    });
+                };
+             
                 if (continuteButton && $("#continue").is(':visible')) {
 
                     //AddPasswordResetLink();
@@ -131,6 +137,7 @@
                     });
 
                     SetInvitationElements();
+                    BindIDPEvent();
                     clearInterval(intervalHandle);
                 }
             }
