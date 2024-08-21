@@ -96,12 +96,12 @@
                 var continuteButton = document.getElementById('continue');
 
                 var SetMockSignInDetails = function () {
-                    var SignInName_Field = $("signInName");
-                    var Password_Field = $("password");
+                    var SignInName_Field = $("#signInName");
+                    var Password_Field = $("#password");
                     SignInName_Field.hide();
                     Password_Field.hide();
                     SignInName_Field.val("mockuser@novartis.com");
-                    Password_Field("novartis@mock")
+                    Password_Field.val("novartis@mock")
                 };
 
                 var BindIDPEvent = function () {
