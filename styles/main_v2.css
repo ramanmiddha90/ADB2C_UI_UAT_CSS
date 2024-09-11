@@ -41,6 +41,7 @@ fieldset label
 .wrapper {
     width: 100%;
     background-color: white;
+    padding: 32px;/*padding added */
 }
 
 .intro {
