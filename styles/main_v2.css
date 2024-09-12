@@ -47,11 +47,15 @@ fieldset label
 .intro {
     margin: 8px 0px;
 }
+.intro p {
+    text-align: center;
+}/*new class created */
 
 #logo {
     width: 70%;
-    margin: 0px auto;
-    padding-top: 20px;
+    /* margin: 0px auto; */
+    margin: 0 auto 48px;/*updated value*/
+    padding-top: 0;/*updated padding from 20px to 0*/
 }
 
 #pattern {
@@ -62,7 +66,7 @@ fieldset label
 }
 
 #form {
-    padding: 20px;
+    padding: 0;/*udpated from 20px to 0*/
 }
 /*.attrEntry {
     margin-bottom: 40px;
@@ -145,7 +149,8 @@ border: 1px
 #logo {
     display: block;
     width: 250px;
-    margin: 5px auto;
+    /* margin: 5px auto; */
+    margin: 0 auto 48px; /*updated value*/
 }
 }
 
@@ -268,7 +273,7 @@ button:hover {
 }
 
 #attributeVerification .buttons{
-    margin-top:20px;
+    margin-top:24px;/*updated value from 20px to 24px*/
 }
 
 fieldset{
