@@ -158,9 +158,8 @@ border: 1px
 select {
     text-align: left !important;
     font-size: 18px !important;
-    margin-bottom: 16px;
-    margin-right: 0; /*property not required*/
-    padding: 12px 14px;
+    margin: 0 0 16px 0;
+    padding: 12px 16px;
     text-align: left;
     text-decoration-color: rgb(0, 28, 74);
     text-decoration-line: none;
@@ -173,7 +172,7 @@ select {
     border-color: rgb(152, 152, 162);
     width: 100%;
     opacity: 1; /*added opacity to 1 from 0.7*/
-    line-height: 22px;
+    line-height: 24px;
 
     /* added class to show custom image */
 
@@ -181,7 +180,7 @@ select {
     -moz-appearance: window;
     background-image: url("../objects/Arrow-Chevron-Down.svg");
     background-repeat: no-repeat;
-    background-position: calc(100% - 16px) center;
+    background-position: calc(100% - 12px) center;
 }
 button {
     align-items: center;
@@ -355,7 +354,7 @@ border-top-style: solid;
 border-top-width: 1px;
 box-shadow: none;
 box-sizing: border-box;
-color:rgb(77, 77, 87);
+color:#001c4a;
 cursor: text;
 display: flex;
 flex-direction: column;
@@ -370,7 +369,7 @@ font-variant-alternates: normal;
 font-variant-caps: normal;
 font-variant-east-asian: normal;
 
-font-weight: 400;
+font-weight: 500;
 letter-spacing: -0.2px;
 line-height: 21.6px;
 margin-bottom: 16px;
@@ -473,15 +472,16 @@ li {
 
 label {
 box-sizing: border-box;
-color: rgb(0, 28, 74);
+color: #4d4d57;/*updated color value as per the style guide*/
 cursor: default;
 display: block;
 font-family: "Futura Now Text",arial;
 font-size: 16px;
-font-weight: 400;
-height: 24px;
+font-weight: 500;/*font weight shold be medium*/
+/* height: 24px; not required*/
 letter-spacing: -0.2px;
-line-height: 21.6px;
+/* line-height: 21.6px; */
+margin-bottom: 8px;/*added margin bottom*/
 text-align: start;
 text-size-adjust: 100%;
 -webkit-tap-highlight-color: rgba(0,0,0,0);
