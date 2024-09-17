@@ -176,12 +176,12 @@ select {
     border-radius: 8px;
     border-color: rgb(152, 152, 162);
     width: 100%;
+    opacity: 1; /*added opacity to 1 from 0.7*/
 
     /* added class to show custom image */
 
     -webkit-appearance: none;
     -moz-appearance: window;
-    border: none;
     background-image: url("../objects/Arrow-Chevron-Down.svg");
     background-repeat: no-repeat;
     background-position: right center;
