@@ -38,6 +38,7 @@ fieldset label
 {
     height: auto;
     display: flex;
+    margin-bottom: 24px;
 }
 .wrapper {
     width: 100%;
@@ -253,13 +254,13 @@ button:hover {
     background-color: #a8d5ff;
 }
 
-#cancel{
+#cancel, #customcancel{
     color: rgb(0, 28, 74);
   
     background-color: #a8d5ff;
 }
 
-#cancel:hover{
+#cancel, #customcancel:hover{
     background-color: #1c59b5;
     color: white;
 }
@@ -287,13 +288,13 @@ button:hover {
 
 fieldset{
     border:none;
-    margin-top: 32px;
+    margin-top: 24px;
 }
 fieldset legend {
     color: #001c4a;
     font-size: 18px;
     font-weight: 500;
-    margin: 0 0 16px 0;
+    margin: 0 0 8px 0;
 }
 /*
 .TnCsAck_li{
@@ -327,8 +328,8 @@ fieldset legend {
 }
 
 div.buttons {
-    min-height: 36px;
-    margin-bottom: 16px;
+    /* min-height: 36px; not required */
+    /* margin-bottom: 16px; not required */
     float:left;
 }
 
