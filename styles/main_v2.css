@@ -40,6 +40,9 @@ fieldset label
     display: flex;
     margin-bottom: 24px;
 }
+fieldset label:last-child {
+    margin-bottom: 0;
+}
 .wrapper {
     width: 100%;
     background-color: white;
@@ -288,7 +291,7 @@ button:hover {
 
 fieldset{
     border:none;
-    margin-top: 24px;
+    margin-top: 16px;
 }
 fieldset legend {
     color: #001c4a;
