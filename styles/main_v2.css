@@ -41,7 +41,7 @@ fieldset label
     margin-bottom: 24px;
 }
 fieldset label:last-child {
-    margin-bottom: 0;
+    margin-bottom: 8px;
 }
 .wrapper {
     width: 100%;
