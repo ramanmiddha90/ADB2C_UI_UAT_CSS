@@ -39,6 +39,7 @@ fieldset label
     height: auto;
     display: flex;
     margin-bottom: 24px;
+    font-weight: 400;
 }
 fieldset label:last-child {
     margin-bottom: 8px;
@@ -490,7 +491,7 @@ cursor: default;
 display: block;
 font-family: "Futura Now Text",arial;
 font-size: 16px;
-font-weight: 400;/*font weight shold be medium*/
+font-weight: 500;/*font weight shold be medium*/
 /* height: 24px; not required*/
 letter-spacing: -0.2px;
 /* line-height: 21.6px; */
