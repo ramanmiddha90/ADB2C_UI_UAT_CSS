@@ -159,13 +159,9 @@ select {
     text-align: left !important;
     font-size: 18px !important;
     margin-bottom: 16px;
-    margin-right: 16px;
-    /* padding-bottom: 12px;
-    padding-left: 24px;
-    padding-right: 24px;
-    padding-top: 12px; */
-    padding: 16px 12px;
-    text-align: center;
+    margin-right: 0; /*property not required*/
+    padding: 12px 14px;
+    text-align: left;
     text-decoration-color: rgb(0, 28, 74);
     text-decoration-line: none;
     text-decoration-style: solid;
@@ -177,6 +173,7 @@ select {
     border-color: rgb(152, 152, 162);
     width: 100%;
     opacity: 1; /*added opacity to 1 from 0.7*/
+    line-height: 22px;
 
     /* added class to show custom image */
 
@@ -184,7 +181,7 @@ select {
     -moz-appearance: window;
     background-image: url("../objects/Arrow-Chevron-Down.svg");
     background-repeat: no-repeat;
-    background-position: right center;
+    background-position: calc(100% - 16px) center;
 }
 button {
     align-items: center;
