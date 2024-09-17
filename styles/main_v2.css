@@ -160,10 +160,11 @@ select {
     font-size: 18px !important;
     margin-bottom: 16px;
     margin-right: 16px;
-    padding-bottom: 12px;
+    /* padding-bottom: 12px;
     padding-left: 24px;
     padding-right: 24px;
-    padding-top: 12px;
+    padding-top: 12px; */
+    padding: 16px 12px;
     text-align: center;
     text-decoration-color: rgb(0, 28, 74);
     text-decoration-line: none;
@@ -175,6 +176,15 @@ select {
     border-radius: 8px;
     border-color: rgb(152, 152, 162);
     width: 100%;
+
+    /* added class to show custom image */
+
+    -webkit-appearance: none;
+    -moz-appearance: window;
+    border: none;
+    background-image: url("../objects/Arrow-Chevron-Down.svg");
+    background-repeat: no-repeat;
+    background-position: right center;
 }
 button {
     align-items: center;
