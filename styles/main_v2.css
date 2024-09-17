@@ -86,7 +86,7 @@ fieldset label:last-child {
     display: inline-block;
     float: left;
     clear: left;
-    margin: 0.5rem;
+    margin: 6px 8px 0 0;
     border-width: 1px !important;
     border-radius: 8px;
     border-color: rgb(152, 152, 162);
