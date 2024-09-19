@@ -418,7 +418,7 @@ cursor: text;
 display: block;
 }
 
-input:foucs {
+input:focus {
     border: 1px solid #1C5985;
 }
 input:active {
