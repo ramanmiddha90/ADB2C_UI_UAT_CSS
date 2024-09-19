@@ -418,7 +418,10 @@ cursor: text;
 display: block;
 }
 
-input:foucs, input:active {
+input:foucs {
+    border: 1px solid #1C5985;
+}
+input:active {
     border: 1px solid #1C5985;
 }
 
