@@ -258,13 +258,13 @@ button:hover {
     background-color: #a8d5ff;
 }
 
-#cancel, #customCancel{
+#cancel, #customCancel, #sendNewCode{
     color: rgb(0, 28, 74);
   
     background-color: #a8d5ff;
 }
 
-#cancel, #customCancel:hover{
+#cancel, #customCancel, #sendNewCode:hover{
     background-color: #1c59b5;
     color: white;
 }
